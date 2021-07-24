@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 
 
-    <title>Document</title>
+    <title>Buoyancy</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body onload="getResolution()">
@@ -81,8 +81,10 @@
 
 </section>
 
-<section class="part " id="simulator">
+<section id="simulator">
 
+    <button class="reset" onclick="reset()">Reset</button>
+ 
 
     <div class="value">
 
@@ -106,6 +108,8 @@
        
     </span>
 
+   
+
     <span class="input">
 
         <label>Fluid density : <span id="l-value">0</span>
@@ -128,6 +132,7 @@
     
 </div>
 
+<div class="tank-flex">
 
     <div class="extra-value">
          <div>Volume of Object = <span>1000 cm<sup>3</sup></span></div>
@@ -142,23 +147,24 @@
 
                     
             <svg width="713" height="383" viewBox="0 0 713 383" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="167.5" y="51.5" width="544" height="222" fill="#ABE2FC" stroke="#9D9D9D"/>
-                <path d="M167 51.5L1 146.5V381L167 273.5V51.5Z" fill="#A6E1FD" stroke="#9D9D9D"/>
+                <rect id="water" x="167.5" y="51.5" width="544" height="222" fill="#ABE2FC" stroke="#9D9D9D"/>
+                <path id="water" d="M167 51.5L1 146.5V381L167 273.5V51.5Z" fill="#A6E1FD" stroke="#9D9D9D"/>
                 <rect x="167.5" y="1.5" width="545" height="272" stroke="black"/>
                 <path d="M167.5 1.5L0.5 96.5V381L168.5 273.5L167.5 1.5Z" stroke="black"/>
                 <rect id="block" x="264.5" y="71.75" width="91.6667" height="74.75" fill="white" stroke="black"/>
                 <path id="block" d="M398.5 46.5L356.358 71.5024V146.747L398.5 117V46.5Z" fill="white" stroke="black"/>
                 <path id="block" d="M356 71.5H264.5L310.5 46.5H398.5L356 71.5Z" fill="white" stroke="black"/>
-                <path d="M446.5 52.5L356.5 111.5V147.5H570L713 52.5H657.5H446.5Z" fill="#A2E0FF" fill-opacity="0.49"/>
-                <path d="M67 110L355.5 112L357 147H1L67 110Z" fill="#A2E0FF" fill-opacity="0.49"/>
-                <path d="M712 51.5L569.5 146.5V381.5L712 273.5V51.5Z" fill="#A2E0FF" fill-opacity="0.49" stroke="#9D9D9D"/>
-                <path d="M712.5 1.5L569.5 96.5V381.5L712.5 273.5V1.5Z" stroke="black"/>
-                <rect x="0.5" y="147.5" width="568" height="234" fill="#A2E0FF" fill-opacity="0.49" stroke="#9D9D9D"/>
+                <path id="water" d="M446.5 52.5L356.5 111.5V147.5H570L713 52.5H657.5H446.5Z" fill="#A2E0FF" fill-opacity="0.49"/>
+                <path id="water" d="M67 110L355.5 112L357 147H1L67 110Z" fill="#A2E0FF" fill-opacity="0.49"/>
+                <path id="water" d="M712 51.5L569.5 146.5V381.5L712 273.5V51.5Z" fill="#A2E0FF" fill-opacity="0.49" stroke="#9D9D9D"/>
+                <path  d="M712.5 1.5L569.5 96.5V381.5L712.5 273.5V1.5Z" stroke="black"/>
+                <rect id="water" x="0.5" y="147.5" width="568" height="234" fill="#A2E0FF" fill-opacity="0.49" stroke="#9D9D9D"/>
                 <rect x="0.5" y="96.5" width="569" height="285" stroke="black"/>
                 </svg>
         </div>
 
-<div id="mySlider"></div>
+    </div>
+
 <button class="full-screen btn"><img src="maximize.svg" alt=""></button>
 <button class="min-screen btn"><img src="minimize.svg" alt=""></button>
 </section>

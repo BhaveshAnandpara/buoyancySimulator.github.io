@@ -15,6 +15,10 @@ $('.full-screen').click(function(){
             elem.msRequestFullscreen();
           }
 
+          if(elem.requestFullscreen){
+            elem.css("padding" , "30px")
+          }
+
 })
 
 // Exit Fullscreen
@@ -41,6 +45,23 @@ let elem = document.getElementById('simulator');
 
 let scrollTop = $(window).scrollTop();
 console.log(scrollTop) ;
+
+
+function reset(){
+
+let intialValue = 100 ;
+
+$('#o-input').val(intialValue);
+$('#o-value').html($('#o-input').val()/100)
+
+$('#l-input').val(intialValue);
+$('#l-value').html($('#l-input').val()/100)
+
+objectUpdate();
+liquidUpdate();
+submergedUpdate()
+
+}
 
 
 // Object density
@@ -175,7 +196,7 @@ let sodiumValue = 0.97 ;
 
 $('#o-input').val(Math.floor(sodiumValue*100));
 $('#o-value').html(sodiumValue)
-
+$('[id=block]').css("fill" , "#C0C0C0");
 objectUpdate();
 submergedUpdate()
 
@@ -187,7 +208,7 @@ $('#o-drop2').click(function(){
   
   $('#o-input').val(Math.floor(aluValue*100));
   $('#o-value').html(aluValue)
-
+  $('[id=block]').css("fill" , "#848789");
   objectUpdate();
   submergedUpdate()
   
@@ -199,7 +220,7 @@ $('#o-drop2').click(function(){
     
     $('#o-input').val(Math.floor(ironValue*100));
     $('#o-value').html(ironValue)
-
+    $('[id=block]').css("fill" , "#434B4D");
     objectUpdate();
     submergedUpdate()
     
@@ -211,7 +232,7 @@ $('#o-drop2').click(function(){
       
       $('#o-input').val(Math.floor(goldValue*100));
       $('#o-value').html(goldValue)
-
+      $('[id=block]').css("fill" , "rgb(255 237 139)");
       objectUpdate();
       submergedUpdate()
       
@@ -227,7 +248,7 @@ $('#l-drop1').click(function(){
   
   $('#l-input').val(Math.floor(waterValue*100));
   $('#l-value').html(waterValue)
-  
+  $('[id=water]').css("fill" , "#A6E1FD");
   liquidUpdate();
   submergedUpdate()
   
@@ -239,12 +260,12 @@ $('#l-drop1').click(function(){
     
     $('#l-input').val(Math.floor(keroValue*100));
     $('#l-value').html(keroValue)
-  
+    $('[id=water]').css("fill" , "#13B0FF");
     liquidUpdate();
-  submergedUpdate()
+  submergedUpdate();
 
+  })
     
-    })
   
     $('#l-drop3').click(function(){
   
@@ -252,7 +273,7 @@ $('#l-drop1').click(function(){
       
       $('#l-input').val(Math.floor(galistanValue*100));
       $('#l-value').html(galistanValue)
-  
+      $('[id=water]').css("fill" , "rgb(201, 201, 201 )");
       liquidUpdate();
   submergedUpdate()
 
@@ -265,12 +286,13 @@ $('#l-drop1').click(function(){
         
         $('#l-input').val(Math.floor(mercuryValue*100));
         $('#l-value').html(mercuryValue)
-  
+        $('[id=water]').css("fill" , "rgb(103 102 102)");
         liquidUpdate();
   submergedUpdate()
 
         
         })
 
-//Block Logic 
+
+
 

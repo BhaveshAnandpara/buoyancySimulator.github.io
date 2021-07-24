@@ -13,11 +13,17 @@
 }
 
 
-body {
-    background-color: #fff;
-    margin: 25px;
 
+.info {
+    width: 99%;
+  
 }
+
+section{
+    margin: 10px;
+    width: 99%;
+}
+
 
 #sim {
     display: flex ;
@@ -103,7 +109,7 @@ h2 {
 
     display: block;
     height: auto ;
-    width: 80%;
+    width: 100%;
     background-image: linear-gradient(-45deg , #0A7DB7 , #91e5ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -168,7 +174,6 @@ h2 {
     justify-content: center;
     flex-direction: row;
 
-
 }
 
 
@@ -189,16 +194,23 @@ ul > li {
     opacity: 0;
 }
 
+.text{
+    max-width: 50%;
+}
+
 .image {
     display: flex;
     align-items: center;
     justify-content: center;
-    width:  500px;
+    max-width: 50%;
+    height: 100%;
     
     
 }
 
 .image img {
+    width: 100%;
+    height: auto;
     transform: scale(0.6);
     animation: lazy-img 0.7s  0.1s forwards;
     animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
@@ -298,9 +310,15 @@ ul > li {
 
 }
 
+
+
+
+
 .tank-container > svg {
     z-index: -5;
     overflow: visible;
+    width: 100%;
+    height: auto;
 }
 
 
@@ -313,41 +331,63 @@ ul > li {
 #block{
 
 transform: translateY(10%);
-transition: transform 1s linear;
+transition: transform 0.8s  cubic-bezier(0,2,1,0.5);
 
 }
 
 #simulator {
-    border: 2px solid black;
-    height: 500px;
-    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    min-height: 80%;
+    min-width: 100%;
     position: absolute;
     background-color: #fff;
+}
+
+.tank-flex {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    min-width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: 0%;
+   
+
 }
 
 .tank-container {
     display: inline-block;
     height: auto;
-    width: auto;
-    position: absolute;
+
     bottom: 0%;
     right: 0%;
     margin: 30px;
     transform: scale(0.8);
     overflow: visible;
+    max-width: 50%;
 }
 
 .value {
+
 
     display: inline-flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
     width: 100%;
+    max-height: 20%;
+    position: absolute;
+    top: 0%;
 }
 
 .input {
-    width: auto;
+    max-width: 50%;
  
     opacity: 1;
     display: inline-flex;
@@ -413,7 +453,134 @@ transition: transform 1s linear;
     font-size: 1.2rem;
     line-height: 45px;
     font-style: italic;
-    display: inline-block;
-    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 100%;
 }
 
+.reset {
+    position: absolute;
+    z-index: 100000;
+    right: 20%;
+    top: -1%;
+    background-color: #39708b;
+    color: white;
+    padding: 3px 15px ;
+    border: none;
+    border-radius: 5px;
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    h2 {
+        font-size: 3.1rem;
+    }
+    .col {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .text{
+       max-width: 100%;
+    }
+
+    .image{
+        max-width: 100%;
+    }
+
+    .image img {
+        width: 100%;
+        height: auto;
+    
+    }
+
+    .tank-flex{
+        max-height: 80%;
+        flex-direction: column-reverse;
+    }
+
+    .tank-container , .extra-value{
+        height: auto;
+        max-width: 100%;
+        position: absolute;
+    }
+
+    .tank-container{
+       
+        top: 0%;
+        margin: 0%;
+        max-height: 50%;
+      
+    }
+
+    .extra-value {
+        bottom: 0%;
+        max-height: 40%;
+        max-width: 100%;
+    }
+
+    .info , section {
+        margin: 10px;
+    }
+
+  }
+
+  @media only screen and (max-width: 768px) {
+    
+    h2 {
+        font-size: 3.1rem;
+    }
+    .col {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .text{
+       max-width: 100%;
+    }
+
+    .image{
+        max-width: 100%;
+    }
+
+    .image img {
+        width: 100%;
+        height: auto;
+    
+    }
+
+    .tank-flex{
+        max-height: 80%;
+        flex-direction: column-reverse;
+    }
+
+    .tank-container , .extra-value{
+        height: auto;
+        max-width: 100%;
+        position: absolute;
+    }
+
+    .tank-container{
+       
+        top: 0%;
+        margin: 0%;
+        max-height: 50%;
+      
+    }
+
+    .extra-value {
+        bottom: 0%;
+        max-height: 40%;
+        max-width: 100%;
+    }
+
+    .info , section {
+        margin: 10px;
+    }
+
+  }
+  
