@@ -1,3 +1,11 @@
+
+let elem = document.getElementById('simulator');
+
+
+let scrollTop = $(window).scrollTop();
+console.log(scrollTop) ;
+
+
 // Fullscreen
 
 $('.full-screen').click(function(){
@@ -39,12 +47,6 @@ $('.min-screen').click(function(){
 })
 
 
-
-let elem = document.getElementById('simulator');
-
-
-let scrollTop = $(window).scrollTop();
-console.log(scrollTop) ;
 
 
 function reset(){
@@ -108,6 +110,7 @@ function liquidUpdate(){
   
   let buoyant = Math.floor(1000*9.8*($('#l-input').val()/100))
   $('#buoyant-l-value').html(buoyant + " N");
+  
 }
 
 //Submerged value Update 
